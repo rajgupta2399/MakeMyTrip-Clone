@@ -21,11 +21,14 @@ import { SunIcon } from "../Icons/SunIcon";
 import { MoonIcon } from "../Icons/MoonIcon";
 import Link from "next/link";
 import Image from "next/image";
-import PlaneImage from "../../../../public/assets/plane.png";
-import HotelImage from "../../../../public/assets/hotel.png";
-import TrainImage from "../../../../public/assets/train2.png";
-import HomeImage from "../../../../public/assets/homestay.png";
-import HolidayImage from "../../../../public/assets/beach.png";
+
+import Airplane from "../Icons/Airplane";
+import HotelIcon from "../Icons/Hotel";
+import TrainIcon from "../Icons/TrainIcon";
+import HolidayIcon from "../Icons/HolidayIcon";
+import TouristIcon from "../Icons/TouristIcon";
+import BusIcon from "../Icons/BusIcon";
+
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -90,14 +93,15 @@ export default function Header() {
             <Link href={"/"}>
               <Image
                 alt="logo"
-                src="https://pngimagesfree.com/wp-content/uploads/Make-My-Trip-Logo-PNG@.png"
-                className=" h-8 w-auto"
+                src="https://images.emtcontent.com/brandlogo/emtlogo_new8.svg"
+                className=" w-24"
                 width={1}
                 height={8}
                 unoptimized
               />
             </Link>
           </a>
+
         </div>
         <div className="flex lg:hidden">
           <button
@@ -108,6 +112,7 @@ export default function Header() {
             }`}
           >
             <span className="sr-only">Open main menu</span>
+            {/* Hamburger Menu */}
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
@@ -247,7 +252,8 @@ export default function Header() {
                       href={"/Flights/"}
                       className=" flex justify-center items-center gap-14 text-[12px] font-bold"
                     >
-                      <Image src={PlaneImage} width={32} height={32} />
+                      {/* <Image src={PlaneImage} width={32} height={32} /> */}
+                      <Airplane/>
                       FLIGHTS
                     </Link>
                   </DisclosureButton>
@@ -260,7 +266,8 @@ export default function Header() {
                       : "bg-[#1D232A] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  <Image src={HotelImage} width={32} height={32} />
+                  {/* <Image src={HotelImage} width={32} height={32} /> */}
+                  <HotelIcon/>
                   HOTELS
                 </Link>
                 <Link
@@ -271,7 +278,8 @@ export default function Header() {
                       : "bg-[#1D232A] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  <Image src={TrainImage} width={32} height={32} />
+                  {/* <Image src={TrainImage} width={32} height={32} /> */}
+                  <TrainIcon/>
                   TRAINS
                 </Link>
                 <Link
@@ -282,7 +290,9 @@ export default function Header() {
                       : "bg-[#1D232A] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  <Image src={HomeImage} width={32} height={32} />
+                  {/* <Image src={HomeImage} width={32} height={32} /> */}
+                  {/* <TouristIcon/> */}
+                  <BusIcon/>  
                   HOMESTAYS
                 </Link>
 
@@ -294,7 +304,8 @@ export default function Header() {
                       : "bg-[#1D232A] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  <Image src={HolidayImage} width={32} height={32} />
+                  {/* <Image src={HolidayImage} width={32} height={32} /> */}
+                  <HolidayIcon/>
                   HOLIDAYS
                 </Link>
               </div>
