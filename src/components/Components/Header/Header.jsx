@@ -8,10 +8,7 @@ import {
   Disclosure,
   DisclosureButton,
 } from "@headlessui/react";
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   PhoneIcon,
@@ -21,6 +18,10 @@ import { SunIcon } from "../Icons/SunIcon";
 import { MoonIcon } from "../Icons/MoonIcon";
 import Link from "next/link";
 import Image from "next/image";
+import { PopoverGroup } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
+import { PopoverButton } from "@headlessui/react";
+import { PopoverPanel } from "@headlessui/react";
 
 import Airplane from "../Icons/Airplane";
 import HotelIcon from "../Icons/Hotel";
@@ -28,7 +29,6 @@ import TrainIcon from "../Icons/TrainIcon";
 import HolidayIcon from "../Icons/HolidayIcon";
 import TouristIcon from "../Icons/TouristIcon";
 import BusIcon from "../Icons/BusIcon";
-
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -101,7 +101,6 @@ export default function Header() {
               />
             </Link>
           </a>
-
         </div>
         <div className="flex lg:hidden">
           <button
@@ -111,9 +110,15 @@ export default function Header() {
               theme === "light" ? "text-gray-700" : "text-white"
             }`}
           >
-            <span className="sr-only">Open main menu</span>
-            {/* Hamburger Menu */}
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+            <span className="sr-only">
+              {mobileMenuOpen ? "Close main menu" : "Open main menu"}
+            </span>
+            {/* Conditionally render the Hamburger or Cross icon */}
+            {mobileMenuOpen ? (
+              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+            ) : (
+              <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+            )}
           </button>
         </div>
         {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
@@ -127,17 +132,13 @@ export default function Header() {
                 href={"/Flights/"}
                 className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
               >
-              
-                FLIGHTS
               </Link>
             </PopoverButton>
             <PopoverPanel
               className={`absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-900/5 ${
                 theme === "light" ? "bg-white" : "bg-gray-800"
               }`}
-            >
-              
-            </PopoverPanel>
+            ></PopoverPanel>
           </Popover>
 
           <Link
@@ -146,7 +147,6 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
-           
             HOTELS
           </Link>
 
@@ -156,7 +156,6 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
-            
             HOLIDAYS
           </Link>
 
@@ -170,7 +169,6 @@ export default function Header() {
               href={"/Trains/"}
               className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
-             
               TRAINS
             </Link>
           </a>
@@ -184,7 +182,6 @@ export default function Header() {
               href={"/Homestays/"}
               className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
-              
               HOMESTAYS
             </Link>
           </a>
@@ -253,7 +250,7 @@ export default function Header() {
                       className=" flex justify-center items-center gap-14 text-[12px] font-bold"
                     >
                       {/* <Image src={PlaneImage} width={32} height={32} /> */}
-                      <Airplane/>
+                      <Airplane />
                       FLIGHTS
                     </Link>
                   </DisclosureButton>
@@ -267,7 +264,7 @@ export default function Header() {
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HotelImage} width={32} height={32} /> */}
-                  <HotelIcon/>
+                  <HotelIcon />
                   HOTELS
                 </Link>
                 <Link
@@ -279,7 +276,7 @@ export default function Header() {
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={TrainImage} width={32} height={32} /> */}
-                  <TrainIcon/>
+                  <TrainIcon />
                   TRAINS
                 </Link>
                 <Link
@@ -292,7 +289,7 @@ export default function Header() {
                 >
                   {/* <Image src={HomeImage} width={32} height={32} /> */}
                   {/* <TouristIcon/> */}
-                  <BusIcon/>  
+                  <BusIcon />
                   HOMESTAYS
                 </Link>
 
@@ -305,7 +302,7 @@ export default function Header() {
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HolidayImage} width={32} height={32} /> */}
-                  <HolidayIcon/>
+                  <HolidayIcon />
                   HOLIDAYS
                 </Link>
               </div>
