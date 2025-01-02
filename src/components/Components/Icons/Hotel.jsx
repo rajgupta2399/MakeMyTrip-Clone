@@ -1,6 +1,6 @@
 import * as React from "react";
 const HotelIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={60.06} height={53.614}>
+  <svg xmlns="http://www.w3.org/2000/svg" width={64} height={53}>
     <defs>
       <linearGradient
         id="a"

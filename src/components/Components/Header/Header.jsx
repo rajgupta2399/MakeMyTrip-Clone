@@ -9,11 +9,6 @@ import {
   DisclosureButton,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
 import { SunIcon } from "../Icons/SunIcon";
 import { MoonIcon } from "../Icons/MoonIcon";
 import Link from "next/link";
@@ -79,8 +74,8 @@ export default function Header() {
         headerVisible ? "translate-y-0" : "-translate-y-full"
       } transition-transform duration-300 ${
         theme === "light"
-          ? "bg-white text-[#1D232A]"
-          : "bg-[#1D232A] text-white"
+          ? "bg-white text-[#16181D]"
+          : "bg-[#16181D] text-white"
       } shadow-md sm:px-5 fixed top-0 left-0 right-0 z-50`}
     >
       <nav
@@ -121,17 +116,25 @@ export default function Header() {
             )}
           </button>
         </div>
-        {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton
               className={`flex items-center gap-x-1 text-sm font-semibold leading-6 ${
-                theme === "light" ? "#1D232A" : "text-white"
+                theme === "light" ? "#16181D" : "text-white"
               }`}
             >
               <Link
-                href={"/Flights/"}
-                className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
+                href={"/flights/"}
+                className="flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
               >
+                <Image
+                  src={
+                    "https://images.emtcontent.com/mob-emthome/flight-icon.svg"
+                  }
+                  width={55}
+                  height={50}
+                  className="mt-1"
+                />
               </Link>
             </PopoverButton>
             <PopoverPanel
@@ -142,56 +145,82 @@ export default function Header() {
           </Popover>
 
           <Link
-            href={"/Hotels/"}
+            href={"/hotels/"}
             className={`${
-              theme === "light" ? "#1D232A" : "text-white"
+              theme === "light" ? "#16181D" : "text-white"
             } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
-            HOTELS
+            <Image
+              src={"https://images.emtcontent.com/mob-emthome/hotel-icon.svg"}
+              width={55}
+              height={0}
+              className="mt-0"
+            />
           </Link>
 
           <Link
-            href={"/Destination/"}
+            href={"/trains/"}
             className={`${
-              theme === "light" ? "#1D232A" : "text-white"
+              theme === "light" ? "#16181D" : "text-white"
             } flex flex-col justify-center items-center gap-2 text-[14px] leading-6 font-semibold`}
           >
-            HOLIDAYS
+            <Image
+              src={"https://images.emtcontent.com/mob-emthome/train-icon.svg"}
+              width={54}
+              height={50}
+              className="mt-1"
+            />
           </Link>
 
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
-              theme === "light" ? "#1D232A" : "text-white"
+              theme === "light" ? "#16181D" : "text-white"
             }`}
           >
             <Link
-              href={"/Trains/"}
+              href={"/bus/"}
               className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
             >
-              TRAINS
+              <Image
+                src={"https://images.emtcontent.com/mob-emthome/bus-icon.svg"}
+                width={52}
+                height={50}
+                className="mt-1"
+              />
             </Link>
           </a>
-          <a
-            href="#"
-            className={`text-sm font-semibold leading-6 ${
-              theme === "light" ? "#1D232A" : "text-white"
-            }`}
+
+          <Link
+            href={"/holidays/"}
+            className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
           >
-            <Link
-              href={"/Homestays/"}
-              className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
-            >
-              HOMESTAYS
-            </Link>
-          </a>
-        </PopoverGroup> */}
+            <Image
+              src={"https://images.emtcontent.com/mob-emthome/holiday-icon.svg"}
+              width={41}
+              className="mt-1"
+              height={50}
+            />
+          </Link>
+
+          <Link
+            href={"/cabs/"}
+            className=" flex flex-col justify-center items-center gap-2 text-[14px] font-semibold"
+          >
+            <Image
+              src={"https://images.emtcontent.com/mob-emthome/cabs-icon.svg"}
+              width={46}
+              height={50}
+              className="mt-1"
+            />
+          </Link>
+        </PopoverGroup>
 
         {/* Theme Switcher Icon */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button onClick={toggleTheme} className="p-2">
             {theme === "light" ? (
-              <MoonIcon className="h-6 w-6 #1D232A" />
+              <MoonIcon className="h-6 w-6 #16181D" />
             ) : (
               <SunIcon className="h-6 w-6 text-white" />
             )}
@@ -209,8 +238,8 @@ export default function Header() {
         <DialogPanel
           className={`${
             theme === "light"
-              ? "bg-white text-[#1D232A]"
-              : "bg-[#1D232A] text-white"
+              ? "bg-white text-[#16181D]"
+              : "bg-[#16181D] text-white"
           }  fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
         >
           <div className="flex items-center justify-between">
@@ -241,12 +270,12 @@ export default function Header() {
                   <DisclosureButton
                     className={`${
                       theme === "light"
-                        ? "bg-white text-[#1D232A]"
-                        : "bg-[#1D232A] text-white"
+                        ? "bg-white text-[#16181D]"
+                        : "bg-[#16181D] text-white"
                     } "group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7`}
                   >
                     <Link
-                      href={"/Flights/"}
+                      href={"/flights/"}
                       className=" flex justify-center items-center gap-14 text-[12px] font-bold"
                     >
                       {/* <Image src={PlaneImage} width={32} height={32} /> */}
@@ -256,11 +285,11 @@ export default function Header() {
                   </DisclosureButton>
                 </Disclosure>
                 <Link
-                  href={"/Hotels/"}
+                  href={"/hotels/"}
                   className={`${
                     theme === "light"
-                      ? "bg-white text-[#1D232A]"
-                      : "bg-[#1D232A] text-white"
+                      ? "bg-white text-[#16181D]"
+                      : "bg-[#16181D] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HotelImage} width={32} height={32} /> */}
@@ -268,11 +297,11 @@ export default function Header() {
                   HOTELS
                 </Link>
                 <Link
-                  href={"/Trains/"}
+                  href={"/trains/"}
                   className={`${
                     theme === "light"
-                      ? "bg-white text-[#1D232A]"
-                      : "bg-[#1D232A] text-white"
+                      ? "bg-white text-[#16181D]"
+                      : "bg-[#16181D] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={TrainImage} width={32} height={32} /> */}
@@ -280,25 +309,25 @@ export default function Header() {
                   TRAINS
                 </Link>
                 <Link
-                  href={"/Homestays/"}
+                  href={"/bus/"}
                   className={`${
                     theme === "light"
-                      ? "bg-white text-[#1D232A]"
-                      : "bg-[#1D232A] text-white"
+                      ? "bg-white text-[#16181D]"
+                      : "bg-[#16181D] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HomeImage} width={32} height={32} /> */}
                   {/* <TouristIcon/> */}
                   <BusIcon />
-                  HOMESTAYS
+                  Buses
                 </Link>
 
                 <Link
-                  href={"/Destination/"}
+                  href={"/holidays/"}
                   className={`${
                     theme === "light"
-                      ? "bg-white text-[#1D232A]"
-                      : "bg-[#1D232A] text-white"
+                      ? "bg-white text-[#16181D]"
+                      : "bg-[#16181D] text-white"
                   } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HolidayImage} width={32} height={32} /> */}
@@ -312,8 +341,8 @@ export default function Header() {
                     href="#"
                     className={`${
                       theme === "light"
-                        ? "bg-white text-[#1D232A]"
-                        : "bg-[#1D232A] text-white"
+                        ? "bg-white text-[#16181D]"
+                        : "bg-[#16181D] text-white"
                     }  -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 `}
                   >
                     Log in
@@ -322,7 +351,7 @@ export default function Header() {
                 <div className="lg:flex lg:flex-1 lg:justify-end">
                   <button onClick={toggleTheme} className="p-2">
                     {theme === "light" ? (
-                      <MoonIcon className="h-6 w-6 #1D232A" />
+                      <MoonIcon className="h-6 w-6 #16181D" />
                     ) : (
                       <SunIcon className="h-6 w-6 text-white" />
                     )}
