@@ -276,7 +276,7 @@ export default function Header() {
                   >
                     <Link
                       href={"/flights/"}
-                      className=" flex justify-center items-center gap-14 text-[12px] font-bold"
+                      className=" flex justify-center items-center gap-16 text-[12.5px] font-bold"
                     >
                       {/* <Image src={PlaneImage} width={32} height={32} /> */}
                       <Airplane />
@@ -290,7 +290,7 @@ export default function Header() {
                     theme === "light"
                       ? "bg-white text-[#16181D]"
                       : "bg-[#16181D] text-white"
-                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
+                  } flex items-center gap-16 text-[12.5px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HotelImage} width={32} height={32} /> */}
                   <HotelIcon />
@@ -302,7 +302,7 @@ export default function Header() {
                     theme === "light"
                       ? "bg-white text-[#16181D]"
                       : "bg-[#16181D] text-white"
-                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
+                  } flex items-center gap-16 text-[12.5px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={TrainImage} width={32} height={32} /> */}
                   <TrainIcon />
@@ -314,12 +314,12 @@ export default function Header() {
                     theme === "light"
                       ? "bg-white text-[#16181D]"
                       : "bg-[#16181D] text-white"
-                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
+                  } flex items-center gap-16 text-[12.5px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HomeImage} width={32} height={32} /> */}
                   {/* <TouristIcon/> */}
                   <BusIcon />
-                  Buses
+                  BUSES
                 </Link>
 
                 <Link
@@ -328,7 +328,7 @@ export default function Header() {
                     theme === "light"
                       ? "bg-white text-[#16181D]"
                       : "bg-[#16181D] text-white"
-                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
+                  } flex items-center gap-16 text-[12.5px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
                   {/* <Image src={HolidayImage} width={32} height={32} /> */}
                   <HolidayIcon />

@@ -15,7 +15,7 @@ const FlightLanding = () => {
             </div>
           </div> */}
           <div className="heading w-full">
-            <h1 className=" sm:text-5xl text-2xl font-semibold capitalize sm:mt-[-20px] sm:mb-[-20px] w-full text-center">
+            <h1 className=" sm:text-5xl text-2xl font-semibold capitalize sm:mt-[-0px] sm:mb-[-20px] w-full text-center">
               Kickstart Your Travel Journey
             </h1>
           </div>

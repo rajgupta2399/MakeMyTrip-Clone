@@ -13,7 +13,7 @@ export function Banner() {
     "https://images.unsplash.com/photo-1500622944204-b135684e99fd?q=80&w=2061&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
   return (
-    <ImagesSlider className="sm:h-[35rem] h-[25rem]" images={images}>
+    <ImagesSlider className="sm:h-[35rem] h-[26rem]" images={images}>
       <motion.div
         initial={{
           opacity: 0,
@@ -28,7 +28,7 @@ export function Banner() {
         }}
         className="z-50 flex flex-col justify-center items-center"
       >
-        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text sm:mt-8 text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4 text-balance">
+        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text sm:mt-10 mt-5 text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4 text-balance">
           Embark on unforgettable adventures and discover breathtaking
           destinations with PlanMyTrip.
         </motion.p>
