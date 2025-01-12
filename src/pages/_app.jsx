@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Footer from "@/components/Components/Footer/Footer";
 import Header from "@/components/Components/Header/Header";
+import { CountryProvider } from "@/context/CountryContext";
 
 export const metadata = {
   title: "MakeMyTrip App",
@@ -35,12 +36,14 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="" />
       </Head>
       <main className={`${montserrat.variable} font-mont w-full min-h-screen`}>
-        <ThemeProvide>
-          <ThemeSwitcher />
-          <Header/>
-          <Component {...pageProps} />
-          <Footer/>
-        </ThemeProvide>
+        <CountryProvider>
+          <ThemeProvide>
+            <ThemeSwitcher />
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </ThemeProvide>
+        </CountryProvider>
       </main>
     </>
   );

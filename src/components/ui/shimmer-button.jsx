@@ -70,6 +70,6 @@ const ShimmerButton = React.forwardRef((
   );
 });
 
-ShimmerButton.displayName = "Plan Your Trip";
+ShimmerButton.displayName = "";
 
 export default ShimmerButton;

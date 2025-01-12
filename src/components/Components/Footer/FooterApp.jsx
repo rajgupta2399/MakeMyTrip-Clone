@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faFacebook,
 //   faInstagram,
